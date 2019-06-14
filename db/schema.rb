@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -20,10 +19,9 @@ ActiveRecord::Schema.define(version: 20150926194133) do
     t.datetime "chk_in_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["book_id"], name: "index_book_histories_on_book_id"
+    t.index ["user_id"], name: "index_book_histories_on_user_id"
   end
-
-  add_index "book_histories", ["book_id"], name: "index_book_histories_on_book_id"
-  add_index "book_histories", ["user_id"], name: "index_book_histories_on_user_id"
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -37,9 +35,8 @@ ActiveRecord::Schema.define(version: 20150926194133) do
     t.integer  "user_id"
     t.boolean  "is_requested"
     t.integer  "requested_by"
+    t.index ["user_id"], name: "index_books_on_user_id"
   end
-
-  add_index "books", ["user_id"], name: "index_books_on_user_id"
 
   create_table "searches", force: :cascade do |t|
     t.string   "isbn"

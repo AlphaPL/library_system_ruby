@@ -12,20 +12,34 @@
       <nav>
         <% if logged_in? %>
         <ul class="nav navbar-nav navbar-left">
-          <div style="margin: 8px 0px 0px 0px; float: left">
-            <%= link_to "Strona główna", home_path, class: "btn btn-primary", style: 'color: #fff'%>
-          </div>
-          <div style="margin: 15px 0px 0px 20px; float: left">
+          <li style="float: left">
             <li style="color: #ffffff; font-size: 14px"> Witaj, <%=@current_user.name %>! </li>
-          </div>
+          </li>
+          <li style="float: left">
+            <%= link_to "Strona główna", home_path, class: "btn btn-primary", style: 'color: #fff'%>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
+          <li >
+            <%= link_to "Wyszukiwanie książek", new_search_path, class: "btn btn-xlg btn-success" , style: "color: #fff"%>
+          </li>
+          <li >
+            <%= link_to "Wszystkie książki", books_path, class: "btn btn-xlg btn-primary", style: "color: #fff"%>
+          </li>
+          <li >
+            <%= link_to "Historia rezerwacji", check_user_history_path(:data => {:user_id => @current_user.id, :book_id => nil}), class: "btn btn-xlg btn-warning", style: "color: #fff"%>
+          </li>
+          <li>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #ffffff">
               <b class="caret" style="border-top:9px solid #ffffff"></b>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Pokaż profil", user_path(@current_user.id) %></li>
+              <li><%= link_to "Edytuj profil", edit_user_path(@current_user.id) %></li>
+              <% if @current_user.is_admin %>
+              <li><%= link_to "Zarządzanie użytkownikami", users_path%></li>
+              <li><%= link_to "Zarządzanie książkami", books_path%></li>
+              <% end %>
               <li><%= link_to "Edytuj profil", edit_user_path(@current_user.id) %></li>
               <li class="divider"></li>
               <li><%= link_to '<i class="glyphicon glyphicon-off"></i> Wyloguj'.html_safe, logout_path, method: :delete, :style => "float: left" %></li>
@@ -40,13 +54,12 @@
   <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
-  <div class="container">
+  <div class="container" style="background-color: white;    margin-right: auto;
+    margin-left: auto;border-radius: 50px / 50px;">
     <%= yield %>
   </div>
   <br/>
   <br/>
-  <%= debug(params) if Rails.env.development? %>
-  <%= debug(session[:user_id]) if Rails.env.development? %>
 
 </body>
 </html>

@@ -10,7 +10,7 @@ gem 'autoprefixer-rails'
 gem 'rails', github: 'rails/rails', branch: "5-0-stable"
 # Use sqlite3 as the database for Active Record
 group :development do
-  gem 'sqlite3'
+	gem 'sqlite3', '~> 1.3.13'
 end
 group :production do
   gem 'pg', '~> 0.20'

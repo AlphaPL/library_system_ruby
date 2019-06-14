@@ -1,21 +1,21 @@
 <%= form_for @search, html:{class: "pure-form"} do |s| %>
 
-<div class="field">
+<div class="field" style="margin-right: auto; margin-left: auto;">
   <%= s.label :isbn%><br />
   <%= s.text_field :isbn%>
 </div>
 
-<div class="field">
+<div class="field" style="margin-right: auto; margin-left: auto;">
   <%= s.label :title, "Tytuł" %><br />
   <%= s.text_field :title%>
 </div>
 
-<div class="field">
+<div class="field" style="margin-right: auto; margin-left: auto;">
   <%= s.label :description, "Opis" %><br />
   <%= s.text_field :description%>
 </div>
 
-<div class="field">
+<div class="field" style="margin-right: auto; margin-left: auto;">
   <%= s.label :author, "Autor" %><br />
   <%= s.text_field :author%>
 </div>
