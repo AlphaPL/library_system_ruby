@@ -66,8 +66,10 @@ class BooksController < ApplicationController
 
   def complete_book_history(book_id, user_id, chk_in_dt)
     @book_history = BookHistory.find_by(:book_id => book_id, :user_id => user_id, :chk_in_date => nil)
-    @book_history.chk_in_date = chk_in_dt
-    @book_history.save!
+    if @book_history
+      @book_history.chk_in_date = chk_in_dt
+      @book_history.save!
+    end
   end
 
   def request_book
@@ -154,17 +156,10 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
-    @book = Book.find(params[:id])
+    @book = Book.delete(params[:id])
     respond_to do |format|
-      if @book.present?
-        @book.is_deleted = true
-        @book.save
         format.html { redirect_to books_url, notice: 'Książka została usunięta' }
         format.json { head :no_content }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
     end
   end
 
@@ -178,5 +173,5 @@ private
   def book_params
     params.require(:book).permit(:title, :description, :author, :isbn, :is_borrowed, :is_deleted)
   end
-  
+
   end
