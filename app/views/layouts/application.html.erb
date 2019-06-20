@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 <style>
-.btn-primary {
+.btn-str {
   color: #ffffff;
   background-color: #138D75;
   -webkit-border-radius: 3px;
@@ -14,7 +14,7 @@
   border-radius: 3px;
   border:none;
   }
-.btn-primary: hover {
+.btn-str: hover {
   color: #ffffff;
   background-color: #1B2631 !important;
   -webkit-border-radius: 3px;
@@ -47,7 +47,7 @@ padding:6px;
         <ul class="nav navbar-nav navbar-left">
 		<li style="margin-right:10px;"><%=image_tag("biblioteka_books.png")%></li>
           <li style="float: left">
-            <%= link_to "Strona główna", home_path, class: "btn btn-primary", style: 'color: #ffffff'%>
+            <%= link_to "Strona główna", home_path, class: "btn btn-str", style: 'color: #ffffff'%>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
