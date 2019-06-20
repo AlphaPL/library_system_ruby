@@ -12,7 +12,7 @@
       <nav>
         <% if logged_in? %>
         <ul class="nav navbar-nav navbar-left">
-		<li><img style="margin-right:10px;height:52px;" src="images/biblioteka_books.png"/></li>         
+		<li><img style="margin-right:10px;height:52px;" src="/images/biblioteka_books.png"/></li>
           <li style="float: left">
             <%= link_to "Strona główna", home_path, class: "btn btn-primary", style: 'color: #fff'%>
           </li>
@@ -30,7 +30,7 @@
 		   <li style="float: left">
             <li style="color: #ffffff; font-size: 14px"> Witaj, <%=@current_user.name %>! </li>
           </li>
-		  <li><img style="height:50px;" src="images/avatar.png"/></li>
+		  <li><img style="height:50px;" src="/images/avatar.png"/></li>
           <li>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #ffffff">
               <b class="caret" style="border-top:9px solid #ffffff"></b>
