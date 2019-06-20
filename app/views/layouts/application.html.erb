@@ -12,7 +12,7 @@
       <nav>
         <% if logged_in? %>
         <ul class="nav navbar-nav navbar-left">
-		<li><%=image_tag("biblioteka_books.png")%></li>
+		<li style="margin-right:10px;"><%=image_tag("biblioteka_books.png")%></li>
           <li style="float: left">
             <%= link_to "Strona główna", home_path, class: "btn btn-primary", style: 'color: #fff'%>
           </li>
@@ -28,7 +28,7 @@
             <%= link_to "Historia rezerwacji", check_user_history_path(:data => {:user_id => @current_user.id, :book_id => nil}), class: "btn btn-xlg btn-warning", style: "color: #fff"%>
           </li>
 		   <li style="float: left">
-            <li style="color: #ffffff; font-size: 14px"> Witaj, <%=@current_user.name %>! </li>
+            <li style="margin:16px 5px 16px 36px;color: #ffffff;font-size: 14px"> Witaj, <%=@current_user.name %>! </li>
           </li>
 		  <li><%=image_tag("avatar.png")%></li>
           <li>
