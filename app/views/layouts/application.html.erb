@@ -56,18 +56,18 @@ padding:6px;
         <ul class="nav navbar-nav navbar-left">
 		<li style="margin-right:10px;"><%=image_tag("biblioteka_books.png")%></li>
           <li style="float: left">
-            <%= link_to "Strona główna", home_path, class: "btn btn-str", style: "color: #ffffff"%>
+            <%= link_to "Strona główna", home_path, class: "btn btn-primary"%>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <%= link_to "Wyszukiwanie książek", new_search_path, class: "btn btn-xlg" , style: "color: #ffffff"%>
+            <%= link_to "Wyszukiwanie książek", new_search_path, class: "btn btn-primary"%>
           </li>
           <li >
-            <%= link_to "Wszystkie książki", books_path, class: "btn btn-xlg", style: "color: #ffffff;"%>
+            <%= link_to "Wszystkie książki", books_path, class: "btn btn-primary"%>
           </li>
           <li>
-            <%= link_to "Historia rezerwacji", check_user_history_path(:data => {:user_id => @current_user.id, :book_id => nil}), class: "btn btn-xlg", style: "color: #ffffff"%>
+            <%= link_to "Historia rezerwacji", check_user_history_path(:data => {:user_id => @current_user.id, :book_id => nil}), class: "btn btn-primary"%>
           </li>
 		   <li style="float: left">
             <li style="margin:16px 5px 16px 36px;color: #ffffff;font-size: 14px"> Witaj, <%=@current_user.name %>! </li>
@@ -98,7 +98,7 @@ padding:6px;
   <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
-  <div class="container animate" style="width: max-content; background-color: white; margin: auto; padding:20px 15px 20px 15px;background-color: rgb(255,255,255); background-color: rgba(255,255,255,0.85); border-radius: 8px">
+  <div class="container animate" style="overflow:hidden;width: max-content; background-color: white; margin: auto; padding:20px 15px 20px 15px;background-color: rgb(255,255,255); background-color: rgba(255,255,255,0.85); border-radius: 8px">
     <%= yield %>
   </div>
   <br/>
