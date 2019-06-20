@@ -56,7 +56,7 @@ padding:6px;
         <ul class="nav navbar-nav navbar-left">
 		<li style="margin-right:10px;"><%=image_tag("biblioteka_books.png")%></li>
           <li style="float: left">
-            <%= link_to "Strona główna", home_path, class: "btn btn-str", style: 'color: #ffffff'%>
+            <%= link_to "Strona główna", home_path, class: "btn btn-str", style: "color: #ffffff"%>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -64,10 +64,10 @@ padding:6px;
             <%= link_to "Wyszukiwanie książek", new_search_path, class: "btn btn-xlg" , style: "color: #ffffff"%>
           </li>
           <li >
-            <%= link_to "Wszystkie książki", books_path, class: "btn btn-xlg", style: "color: #fff;border:none;hover{color: #ffffff"%>
+            <%= link_to "Wszystkie książki", books_path, class: "btn btn-xlg", style: "color: #ffffff;"%>
           </li>
           <li>
-            <%= link_to "Historia rezerwacji", check_user_history_path(:data => {:user_id => @current_user.id, :book_id => nil}), class: "btn btn-xlg btn-warning", style: "color: #ffffff"%>
+            <%= link_to "Historia rezerwacji", check_user_history_path(:data => {:user_id => @current_user.id, :book_id => nil}), class: "btn btn-xlg", style: "color: #ffffff"%>
           </li>
 		   <li style="float: left">
             <li style="margin:16px 5px 16px 36px;color: #ffffff;font-size: 14px"> Witaj, <%=@current_user.name %>! </li>
