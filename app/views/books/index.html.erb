@@ -1,8 +1,7 @@
-<div style="width:90%"> 
  <p id="notice"><%= notice %></p>
 
   <p class="lead">Wszystkie książki</p>
-    <table class="table">
+    <table class="table" style="width:90%">
       <thead>
         <tr>
           <th>Tytuł</th>
@@ -70,4 +69,3 @@
     <%if @current_user.is_admin %>
     <%= link_to 'Dodaj książkę', new_book_path, :class => "btn btn-success", :style => "color: #ffffff" %>
     <% end %>
-</div>
