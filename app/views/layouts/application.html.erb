@@ -54,8 +54,7 @@
   <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
-  <div class="container" style="background-color: white;    margin-right: auto;
-    margin-left: auto;border-radius: 50px / 50px;">
+  <div class="container master">
     <%= yield %>
   </div>
   <br/>
