@@ -18,14 +18,14 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li >
-            <%= link_to "Wyszukiwanie książek", new_search_path, class: "btn btn-xlg btn-success" , style: "color: #fff"%>
+          <li>
+            <%= link_to "Wyszukiwanie książek", new_search_path, class: "btn btn-xlg btn-success" , style: "color: #fff;border:none"%>
           </li>
           <li >
-            <%= link_to "Wszystkie książki", books_path, class: "btn btn-xlg btn-primary", style: "color: #fff"%>
+            <%= link_to "Wszystkie książki", books_path, class: "btn btn-xlg btn-primary", style: "color: #fff;border:none;hover{color: #ffffff;background-color: #2E86C1 !important}"%>
           </li>
-          <li >
-            <%= link_to "Historia rezerwacji", check_user_history_path(:data => {:user_id => @current_user.id, :book_id => nil}), class: "btn btn-xlg btn-warning", style: "color: #fff"%>
+          <li>
+            <%= link_to "Historia rezerwacji", check_user_history_path(:data => {:user_id => @current_user.id, :book_id => nil}), class: "btn btn-xlg btn-warning", style: "color: #fff;border:none"%>
           </li>
 		   <li style="float: left">
             <li style="margin:16px 5px 16px 36px;color: #ffffff;font-size: 14px"> Witaj, <%=@current_user.name %>! </li>
