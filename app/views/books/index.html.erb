@@ -1,10 +1,9 @@
-<div style="width:90%;text-align:center;margin:0 auto">
  <p id="notice"><%= notice %></p>
 
   <p class="lead">Wszystkie książki</p>
-    <table class="table">
+    <table class="table" style="">
       <thead>
-        <tr>
+        <tr style="background-color:#D5DBDB">
           <th>Tytuł</th>
           <th>Opis</th>
           <th>Autor</th>
@@ -13,7 +12,7 @@
           <%if @current_user.is_admin %>
           <th>Zarezerwowana przez </th>
           <%end%>
-          <th colspan="3"></th>
+          <th colspan="5"></th>
         </tr>
       </thead>
       <% @books.each do |book| %>
@@ -70,4 +69,3 @@
     <%if @current_user.is_admin %>
     <%= link_to 'Dodaj książkę', new_book_path, :class => "btn btn-success", :style => "color: #ffffff" %>
     <% end %>
-</div>
