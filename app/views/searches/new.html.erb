@@ -1,9 +1,9 @@
-<div style="padding:5px 50px 5px 50px">
+<div style="padding:25px 60px 10px 60px">
 <%= form_for @search, html:{class: "pure-form"} do |s| %>
 
 <div class="field" style="margin-right: auto; margin-left: auto;">
   <%= s.label :isbn%><br />
-  <%= s.text_field :isbn%>
+  <%= s.text_field :isbn, class: "form-control"%>
 </div>
 
 <div class="field" style="margin-right: auto; margin-left: auto;">
@@ -13,12 +13,12 @@
 
 <div class="field" style="margin-right: auto; margin-left: auto;">
   <%= s.label :description, "Opis" %><br />
-  <%= s.text_field :description%>
+  <%= s.text_field :description, class: "form-control"%>
 </div>
 
 <div class="field" style="margin-right: auto; margin-left: auto;">
   <%= s.label :author, "Autor" %><br />
-  <%= s.text_field :author%>
+  <%= s.text_field :author, class: "form-control"%>
 </div>
 
 <div class="actions"><%= s.submit "Wyszukaj", class: "btn btn-primary"%></div>
