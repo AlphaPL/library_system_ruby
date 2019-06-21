@@ -1,7 +1,8 @@
+<div style="margin:0 auto; left:0px; padding:5px 45px 5px 45px">
 <% if @current_user.is_admin? %>
 <p id="notice"><%= notice %></p>
 
-<h1>Lista użytkowników</h1>
+<h3>Lista użytkowników</h3>
 
 <table class="table table-hover table-responsive">
   <thead>
@@ -43,3 +44,4 @@
   <p class="text-danger">Nie masz wystarczających uprawnień do podglądu tej strony</p>
 </blockquote>
 <% end %>
+</div>
