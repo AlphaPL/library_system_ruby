@@ -11,11 +11,11 @@
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.email_field :email, class: 'form-control', style="width:250px"%>
       </br>
 
       <%= f.label :password, "Hasło" %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control', style="width:250px"%>
       </br>
 
       <%= f.submit "Zaloguj", class: "btn btn-primary btn-block" %>
