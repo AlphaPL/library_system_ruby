@@ -1,6 +1,6 @@
 <% provide(:title, "Logowanie") %>
 <div style="margin:0 auto; left:0px; text-align:center;padding:5px 60px 5px 60px">
-<p style="margin-top:0px; width:160px;"><%=image_tag("biblioteka.png")%></p>
+<%=image_tag("biblioteka.png"), style="margin-top:0px; width:160px;"%>
 <h3>Witamy w aplikacji Biblioteka!</h3>
 <h4>Zaloguj się, aby z niej skorzystać.</h4>
 </div>
@@ -11,11 +11,11 @@
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control', style="width:250px"%>
+      <%= f.email_field :email, class: 'form-control'%>
       </br>
 
       <%= f.label :password, "Hasło" %>
-      <%= f.password_field :password, class: 'form-control', style="width:250px"%>
+      <%= f.password_field :password, class: 'form-control'%>
       </br>
 
       <%= f.submit "Zaloguj", class: "btn btn-primary btn-block" %>
