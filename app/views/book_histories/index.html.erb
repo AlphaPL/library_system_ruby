@@ -1,3 +1,4 @@
+<div style="padding:5px 50px 5px 50x">
     <p id="notice"><%= notice %></p>
     <% if((@data.split("&")[1].split("=")[1].to_i == @current_user.id) || @current_user.is_admin) %>
 
@@ -10,10 +11,10 @@
     <%else%>
     <h1>Historia rezerwacji <i style='color:#428bca'><%=Book.find(@data.split("&")[0].split("=")[1].to_i).title%></i></h1>
     <%end%>
-
+	<
     <table class='table'>
       <thead>
-        <tr>
+        <tr style="background-color:#D5DBDB">
           <th>Książka</th>
           <th>Data rezerwacji</th>
           <th>Data oddania</th>
@@ -67,3 +68,4 @@
         <% end %>
       </br>
       <%= link_to 'Powrót', :back, :class => "btn btn-warning", :style => "color: #ffffff" %>
+</div>
