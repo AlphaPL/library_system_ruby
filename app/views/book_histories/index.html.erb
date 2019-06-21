@@ -4,12 +4,12 @@
 
     <%if !@data.split("&")[1].split("=")[1].nil?       #user_id is not nil%>
     <%if @data.split("&")[1].split("=")[1].to_i == @current_user.id%>
-    <h1>Twoja historia rezerwacji</h1>
+    <h3>Twoja historia rezerwacji</h3>
     <%else %>
-    <h1><i style='color:#428bca'><%=User.find(@data.split("&")[1].split("=")[1].to_i).name%>'s</i> Historia rezerwacji</h1>
+    <h3><i style='color:#428bca'><%=User.find(@data.split("&")[1].split("=")[1].to_i).name%>'s</i> Historia rezerwacji</h3>
     <%end%>
     <%else%>
-    <h1>Historia rezerwacji <i style='color:#428bca'><%=Book.find(@data.split("&")[0].split("=")[1].to_i).title%></i></h1>
+    <h3>Historia rezerwacji <i style='color:#428bca'><%=Book.find(@data.split("&")[0].split("=")[1].to_i).title%></i></h3>
     <%end%>
 	
     <table class='table'>
