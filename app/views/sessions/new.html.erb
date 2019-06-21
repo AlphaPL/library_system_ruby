@@ -1,11 +1,10 @@
 <% provide(:title, "Logowanie") %>
-<div style="margin:0 auto; left:0px; text-align:center;padding:5px 60px 5px 60px">
+<div style="margin:0 auto; left:0px; text-align:center;padding:5px 100px 5px 100px">
 <%=image_tag("biblioteka.png")%><br/>
 <h3>Witamy w aplikacji Biblioteka!</h3>
 <h4>Zaloguj się, aby z niej skorzystać.</h4>
 </div>
 <br/>
-<br />
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
