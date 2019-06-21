@@ -2,7 +2,7 @@
  <p id="notice"><%= notice %></p>
 
   <p class="lead">Wszystkie książki</p>
-    <table class="table"style="max-width:1200px">
+    <table class="table"style="max-width:1366px">
       <thead>
         <tr style="background-color:#D5DBDB">
           <th>Tytuł</th>
@@ -47,18 +47,18 @@
 
           <% if book.user_id == @current_user.id %>
 
-          <td><%= link_to 'Powrót', return_book_path(:id => book.id), :class => "btn btn-warning", :style => "color: #ffffff"%></td>
+          <td><%= link_to 'Powrót', return_book_path(:id => book.id), :class => "btn btn-warning", :style => "color: #ffffff;font-size:12px;"%></td>
           <%else%>
           <% if !book.is_requested %>
-          <td><%= link_to 'Prośba o powiadomienie', request_book_path(:id => book.id), :class => "btn btn-warning", :style => "color: #ffffff"%></td>
+          <td><%= link_to 'Prośba o powiadomienie', request_book_path(:id => book.id), :class => "btn btn-warning", :style => "color: #ffffff;font-size:12px;"%></td>
           <%else%>
           <% if book.is_requested && (book.requested_by == @current_user.id) %>          
-          <td><%= link_to 'Anuluj powiadomienia', cancel_request_book_path(:id => book.id), :class => "btn btn-warning", :style => "color: #ffffff"%></td>
+          <td><%= link_to 'Anuluj powiadomienia', cancel_request_book_path(:id => book.id), :class => "btn btn-warning", :style => "color: #ffffff;font-size:12px;"%></td>
           <%end%>
           <%end%>
           <%end%>
           <%else%>
-          <td><%=link_to 'Zarezerwuj', borrow_book_path(:id => book.id), :class => "btn btn-success", :style => "color: #ffffff"%></td>
+          <td><%=link_to 'Zarezerwuj', borrow_book_path(:id => book.id), :class => "btn btn-success", :style => "color: #ffffff;font-size:12px;"%></td>
           <%end%>
           <%end%>
         </tr>
