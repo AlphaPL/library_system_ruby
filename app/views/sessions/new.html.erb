@@ -1,5 +1,8 @@
 <% provide(:title, "Logowanie") %>
-<div style="margin: 0px 0px 0px 150px"><h1>Witamy w aplikacji Biblioteka!<br/>Zaloguj się, aby z niej skorzystać.</h1></div>
+<div>
+<p style="margin-top:0px; width:200px;"><%=image_tag("biblioteka_books.png")%></p>
+<h3>Witamy w aplikacji Biblioteka!</h3>
+</div>
 <br/>
 <br />
 <div class="row">
@@ -18,9 +21,11 @@
       </br>
     <% end %>
     </br>
-    <div align="right">
-    Jesteś pierwszy raz?
+    <div>
+	<h5>
+    Jesteś pierwszy raz?<br/><br/>
     <%= link_to 'Rejestracja', signup_path, class: "btn btn-primary", style: "color: #ffffff" %>
+	</h5>
      </div>
   </div>
 </div>
