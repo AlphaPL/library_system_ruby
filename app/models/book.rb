@@ -13,5 +13,6 @@ class Book < ActiveRecord::Base
   validates :isbn,
             :presence => {:message => "Wpisz ISBN"},
             :uniqueness => true,
-            :length => {:minimum => 13, :maximum => 13}
+            :length => {:minimum => 13, :maximum => 13},
+            :numericality => {:only_integer => true }
 end
