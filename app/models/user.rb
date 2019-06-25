@@ -3,20 +3,14 @@ class User < ActiveRecord::Base
   has_many :book_histories
   before_save { self.email = email.downcase } 
   validates :name, 
-            :presence => {:message => "Wpisz imię"},
-            :length => {:maximum => 255}
+            :presence => true
   validates :email,
-            :presence => {:message => "Wpisz email"},
+            :presence => true,
             :uniqueness => {:message => "Email już istnieje"},
-            :email_format => {:message => "Email jest nie prawidłowy"},
-            :length => {:maximum => 255}
+            :email_format => {:message => "Email jest nie prawidłowy"}
   validates :password,
             :length => {:minimum => 8 },
-            :presence => {:message => "Wpisz hasło"}
-  validates :address,
-            :length => {:maximum => 255}
-  validates :phone,
-            :length => {:minimum => 9, :maximum => 9},
-            :numericality => {:only_integer => true }
+            :presence => {:message => "Wpisz hasło"},
+            :allow_nil => true
   has_secure_password
 end

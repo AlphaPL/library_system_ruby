@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190625143404) do
+ActiveRecord::Schema.define(version: 20150926194133) do
 
   create_table "book_histories", force: :cascade do |t|
     t.integer  "book_id"
@@ -24,40 +24,41 @@ ActiveRecord::Schema.define(version: 20190625143404) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string   "title",        limit: 100
-    t.string   "description",  limit: 500
-    t.string   "author",       limit: 100
-    t.integer  "isbn",         limit: 8
-    t.boolean  "is_borrowed",              default: false
-    t.boolean  "is_deleted",               default: false
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.string   "title"
+    t.string   "description"
+    t.string   "author"
+    t.string   "isbn"
+    t.boolean  "is_borrowed"
+    t.boolean  "is_deleted"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "user_id"
-    t.boolean  "is_requested",             default: false
+    t.boolean  "is_requested"
     t.integer  "requested_by"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
   create_table "searches", force: :cascade do |t|
-    t.decimal  "isbn"
-    t.string   "title",       limit: 100
-    t.string   "description", limit: 500
-    t.string   "author",      limit: 100
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "isbn"
+    t.string   "title"
+    t.string   "description"
+    t.string   "author"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "password_digest", limit: 255
-    t.string   "email",           limit: 255
-    t.string   "address",         limit: 255
-    t.integer  "phone"
-    t.boolean  "is_admin",                    default: false
-    t.boolean  "is_deleted",                  default: false
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
-    t.boolean  "super_admin",                 default: false
+    t.string   "name"
+    t.string   "password_digest"
+    t.string   "email"
+    t.string   "address"
+    t.string   "phone"
+    t.boolean  "is_admin"
+    t.boolean  "is_deleted"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.boolean  "requested_by"
+    t.boolean  "super_admin"
   end
 
 end
