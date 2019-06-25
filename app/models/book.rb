@@ -2,13 +2,16 @@ class Book < ActiveRecord::Base
 	belongs_to :user
 	has_many :book_histories
   validates :title,
-            :presence => true
-  validates :isbn,
-            :presence => true
+            :presence => {:message => "Wpisz tytuł"},
+            :length => {:maximum => 100}
+  validates :author,
+            :presence => {:message => "Wpisz autora"},
+            :length => {:maximum => 100}
   validates :description,
-            :presence => true
+            :presence => {:message => "Dodaj opis"},
+            :length => {:maximum => 500}
   validates :isbn,
-            :presence => true,
-            :uniqueness => true
-
+            :presence => {:message => "Wpisz ISBN"},
+            :uniqueness => true,
+            :length => {:minimum => 13, :maximum => 13}
 end
