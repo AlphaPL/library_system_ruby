@@ -35,8 +35,7 @@ def generate_book_title(min, max)
 	title[0..title_end]
 end
 
-User.create(name: "admin", password: "00000000", email: "admin@admin.pl", address: "adminowo", phone: "123456789", is_admin: true, super_admin: true)
-
+User.create(name: "admin", password: "00000000", email: "admin@admin.pl", address: "adminowo", phone: "123456789", is_admin: true
 ('a'..'m').each do |l|
 	username = generate_string(3, true) + " " + generate_string(3, true)
 	password = "00000000"

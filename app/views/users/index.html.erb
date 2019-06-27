@@ -27,7 +27,7 @@
         <td><%= link_to 'Pokaż', user, class: "btn btn-success", :style => "color: #ffffff"%></td>
         <td><%= link_to 'Edytuj', edit_user_path(user), class: "btn btn-warning" , :style => "color: #ffffff"%></td>
         <td><%=link_to 'Pokaż historię rezerwacji', check_user_history_path(:data => {:user_id => user.id, :book_id => nil}), :class => "btn btn-success", :style => "color: #ffffff"%></td>
-        <%if user.id != @current_user.id && !user.super_admin %>
+        <%if user.id != @current_user.id %>
         <td><%= link_to 'Usuń', user, method: :delete, data: { confirm: 'Czy jesteś pewien?' }, class: "btn btn-danger" , :style => "color: #ffffff"%></td>
 
         <% end %>

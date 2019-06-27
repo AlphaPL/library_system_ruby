@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190625213857) do
+ActiveRecord::Schema.define(version: 20190627064937) do
 
   create_table "book_histories", force: :cascade do |t|
     t.integer  "book_id"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 20190625213857) do
     t.boolean  "is_deleted",                  default: false
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
-    t.boolean  "super_admin",                 default: false
   end
 
 end
